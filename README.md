@@ -117,54 +117,92 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 SR FLIPFLOP
 
 module SR(S,R,clk,Q,Qbar);
+
 input S,R,clk;
+
 output Q,Qbar;
+
 wire X,Y;
+
 nand (X,S,clk);
+
 nand (Y,R,clk);
+
 nand (Q,X,Qbar);
+
 nand (Qbar,Y,Q);
+
 endmodule
+
 
 JK FLIPFLOP
 
 module JK(J,K,clk,Q,Qbar);
+
 input J,K,clk;
+
 output Q,Qbar;
+
 wire X,Y;
+
 nand (X,J,clk,Qbar);
+
 nand (Y,K,clk,Q);
+
 nand (Q,X,Qbar);
+
 nand (Qbar,Y,Q);
+
 endmodule
+
 
 D FLIPFLOP
 
 module DF(D,clk,Q,Qbar);
+
 input D,clk;
+
 output Q,Qbar;
+
 assign Dbar=~D;
+
 wire X,Y;
+
 nand (X,D,clk);
+
 nand (Y,Dbar,clk);
+
 nand (Q,X,Qbar);
+
 nand (Qbar,Y,Q);
+
 endmodule 
+
 
 T FLIPFLOP
 
+
 module TF(T,clk,Q,Qbar);
+
 input T,clk;
+
 output Q,Qbar;
+
 wire S,R;
+
 nand (S,T,clk,Qbar);
+
 nand (R,T,clk,Q);
+
 nand (Q,S,Qbar);
+
 nand (Qbar,R,Q);
+
 endmodule
 
 
 Developed by: HARINI.E
+
 RegisterNumber:  212222050017
 */
 
